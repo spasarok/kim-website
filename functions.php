@@ -10,14 +10,13 @@ function kim_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'kim_enqueue_scripts');
 
 // Menus
-function register_my_menus(){
+function kim_register_menus(){
+    add_theme_support('menus');
     register_nav_menus(
         array('header-menu' => __('Header Menu'))
     );
 }
-add_theme_support('menus');
-add_action('init', 'register_my_menus');
-
+add_action('init', 'kim_register_menus');
 
 // Post types
 function kim_post_types() {
@@ -35,12 +34,23 @@ function kim_post_types() {
     register_post_type('kim_resume_item',
         array(
             'labels' => array(
-                'name' => __('Resume'),
-                'singular_name' => __('Resume')
+                'name' => __('Resume Items'),
+                'singular_name' => __('Resume Item')
             ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'resume')
+        )
+    );
+    register_post_type('kim_tech_post',
+        array(
+            'labels' => array(
+                'name' => __('Tech Posts'),
+                'singular_name' => __('Tech Post')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'tech-post')
         )
     );
 }

@@ -1,11 +1,9 @@
-<?php $resume = new Resume(); ?>
-
-<!DOCTYPE html>
-<html>
 <?php get_header(); ?>
 
+<?php $resume = new Resume(); ?>
+
 <main class="resume">
-    <div class="container">
+    <div class="container skinny">
         <h1>Resume</h1>
         <section class="skills">
             <h2>Skills</h2>
@@ -18,6 +16,16 @@
             <div class="timeline">
                 <?php $experience = $resume::query_cat('experience'); ?>
                 <?php while($experience->have_posts()): $experience->the_post(); ?>
+                    <?php get_template_part('sections/resume', get_post_type()); ?>
+                <?php endwhile; ?>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Leadership</h2>
+            <div class="timeline">
+                <?php $leadership = $resume::query_cat('leadership'); ?>
+                <?php while($leadership->have_posts()): $leadership->the_post(); ?>
                     <?php get_template_part('sections/resume', get_post_type()); ?>
                 <?php endwhile; ?>
             </div>
@@ -37,4 +45,3 @@
 </main>
 
 <?php get_footer(); ?>
-</html>
