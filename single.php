@@ -1,12 +1,19 @@
 <?php get_header(); ?>
 
 <main class="single">
-    <div class="container content">
+
+    <article class="container content">
         <?php while(have_posts()): the_post(); ?>
-            <h1><?php the_title(); ?></h1>
+        	<header>
+            	<h1><?php the_title(); ?></h1>
+            	<div class="post-details">
+            		<span class="date"><?php the_date(); ?></span>
+            		<span class="tags"><?php the_tags('', ', '); ?></span>
+        		</div>
+    		</header>
             <?php the_content(); ?>
         <?php endwhile?>
-    </div>
+    </article>
 </main>
 
 <?php get_footer(); ?>
