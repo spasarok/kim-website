@@ -15,7 +15,7 @@
                 <header>
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-details">
-                        <span class="date"><?php the_date(); ?></span>
+                        <span class="date"><?php echo get_the_date(); ?></span>
                         <span class="tags"><?php the_tags('', ', '); ?></span>
                     </div>
                 </header>
