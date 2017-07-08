@@ -85,6 +85,13 @@ function kim_taxonomies() {
 }
 add_action( 'init', 'kim_taxonomies', 0 );
 
+// Replaces the excerpt "Read More" text by a link
+function kim_read_more($more) {
+    global $post;
+    return '<a class="moretag" href="'. get_permalink($post->ID) . '">...</a>';
+}
+add_filter('excerpt_more', 'kim_read_more');
+
 include 'classes/formatter.php';
 include 'classes/resume.php';
 include 'includes/theme-options/theme-options.php';
