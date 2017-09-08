@@ -1,5 +1,11 @@
 /* Theme Name: Kim Website */
 
+@media only screen and (max-device-width: 767px) {
+    *{
+
+    }
+}
+
 html{
     position: relative;
     min-height: 100%;
@@ -51,6 +57,51 @@ h2 a{
 .center-wrapper{
     text-align: center;
 }
+
+@media only screen and (max-device-width: 767px) {
+    body{
+        font-size: 46px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    h1{
+      font-size: 108px;  
+    }
+    h2{
+      font-size: 82px; 
+      margin: 40px auto; 
+    }
+    h3{
+        font-size: 62px;
+        font-weight: bold;
+        margin: 40px auto;
+    }
+    .skinny{
+        max-width: 100%;
+        margin: 0 50px;
+    }
+}
+
+
+/* Bootstrap Overrides */
+@media (max-device-width: 768px){
+    kbd{
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+@media (min-width: 768px){
+    .container {
+        width: auto;
+    }
+}
+
+@media (min-device-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+
 
 /* Header */
 body > header{
@@ -108,9 +159,29 @@ article .post-details{
     font-size: 12px;
     font-weight: bold;
 }
-
 article .post-details > span{
     margin-right: 10px;
+}
+@media only screen and (max-device-width: 767px) {
+    body > header{
+        min-height: 375px;
+    }
+    body > header h1{
+        font-size: 96px;
+    }
+    body > header .social img{
+        height: 100px;
+        display: block;
+    }
+    article .post-details{
+        font-size: 40px;
+    }
+    article .btn{
+        font-size: 40px;
+        padding: 30px;
+        display: block;
+        width: 100%;
+    }
 }
 
 /* Home page */
@@ -123,6 +194,11 @@ article .post-details > span{
 .home .avatar{
     border-radius: 50%;
     border: 5px solid #000;
+}
+@media only screen and (max-device-width: 767px) {
+    .home .avatar{
+        width: 50%;
+    }
 }
 
 /* Resume */
@@ -183,10 +259,46 @@ article .post-details > span{
     font-weight: 500;
 }
 
+@media only screen and (max-device-width: 767px) {
+    .resume .timeline{
+        margin-left: 0;
+        border: 0;
+    }
+    .resume-item{
+        padding: 30px 0;
+    }
+    .resume-item .details{
+        margin-left: 225px;
+    }
+    .resume-item .icon{
+        left: 0;
+        width: 180px;
+    }
+    .resume-item .bullet{
+        display: none;
+    }
+    .resume-item .employer,
+    .resume-item time{
+        font-size: 40px;
+    }
+    .resume-item time.year{
+        display: none;
+    }
+    .resume-item .position{
+        font-size: 56px;
+    }
+}
+
 /* Single post */
 .single .content{
     max-width: 700px;
     margin: 0 auto;
+}
+@media only screen and (max-device-width: 767px) {
+    .single .content {
+        max-width: 100%;
+        margin: 0 50px;
+    }
 }
 
 /* Footer */
@@ -201,22 +313,9 @@ footer{
 footer p{
     margin: 0;
 }
-
-@media only screen and (max-width: 767px) {
-    .resume .timeline{
-        margin-left: 0;
-        border: 0;
-    }
-    .resume-item{
-        padding: 30px 0;
-    }
-    .resume-item .icon{
-        left: 0;
-    }
-    .resume-item .bullet{
-        display: none;
-    }
-    .resume-item time.year{
-        display: none;
+@media only screen and (max-device-width: 767px) {
+    footer{
+        position: static;
     }
 }
+
